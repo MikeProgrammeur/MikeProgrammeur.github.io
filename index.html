@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Importation des polices chics -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Importation des icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Menu tout en haut, discret -->
+    <nav class="top-nav">
+        <ul>
+            <li><a href="#" onclick="showSection('home')">Mosaïque des projets</a></li>
+            <li><a href="#" onclick="showSection('about')">À propos</a></li>
+            <li><a href="#" onclick="showSection('contact')">Mes réseaux</a></li>
+        </ul>
+    </nav>
+
+    <!-- L'en-tête style magazine -->
+    <header class="editorial-header">
+        <div class="header-main">
+            <span class="italic-serif"> </span>
+            <h1 id="site-title">MON PORTFOLIO.</h1>
+            <span class="italic-serif"> </span>
+        </div>
+        <div class="header-sub">
+            <span>DEPUIS 2022</span>
+            <span class="bold-spaced">SCULPTURE • FONDERIE • EBENISTERIE</span>
+            <span>FRANCE</span>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Principale -->
+        <section id="home" class="active">
+            <!-- Le bloc beige -->
+            <div class="intro-block">
+                <p id="home-intro-text"></p>
+            </div>
+            
+            <!-- La mosaïque -->
+            <div class="mosaic" id="project-container"></div>
+        </section>
+
+        <!-- Page About / Studio -->
+        <section id="about">
+            <h2>À propos</h2>
+            <div class="content-wrapper">
+                <p id="about-text"></p>
+            </div>
+        </section>
+
+        <!-- Page Contact -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="content-wrapper">
+                <p>N'hésitez pas à m'écrire ou à me suivre sur mes réseaux.</p>
+                <div class="social-links" id="social-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

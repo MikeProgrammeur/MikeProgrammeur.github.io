@@ -1,0 +1,122 @@
+/* Base & Polices */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    background: #ffffff; 
+    color: #111111; 
+    font-family: 'Montserrat', sans-serif; /* Police moderne pour les petits textes */
+    line-height: 1.6;
+}
+
+/* Typographie spécifique */
+h1, h2, h3, .italic-serif {
+    font-family: 'Playfair Display', serif; /* Police chic type magazine */
+}
+.italic-serif { font-style: italic; font-size: 1.2rem; color: #444; }
+
+/* Menu de navigation tout en haut */
+.top-nav { padding: 20px 0 10px 0; text-align: center; }
+.top-nav ul { list-style: none; display: flex; justify-content: center; gap: 40px; }
+.top-nav a { 
+    color: #888; 
+    text-decoration: none; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+.top-nav a:hover { color: #000; }
+
+/* Header Éditorial (Les lignes noires) */
+.editorial-header {
+    margin: 0 5%; /* Marge sur les côtés */
+    border-top: 2px solid #111;
+    border-bottom: 2px solid #111;
+}
+.header-main {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 0;
+}
+#site-title {
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-align: center;
+}
+.header-sub {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid #111; /* Ligne fine interne */
+    padding: 12px 0;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.bold-spaced { font-weight: 500; letter-spacing: 3px; }
+
+/* Sections */
+section { display: none; padding: 20px 5%; margin: 0 auto; min-height: 70vh; animation: fadeIn 0.6s ease; }
+section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Bloc d'introduction beige */
+.intro-block {
+    background-color: #f6f1ec; /* Beige très clair inspiré de ton image */
+    max-width: 800px;
+    margin: 40px auto 60px auto;
+    padding: 40px 20px;
+    text-align: center;
+    color: #444;
+    font-size: 0.9rem;
+}
+
+/* Titres des pages */
+h2 { font-size: 2.5rem; font-weight: 400; margin: 40px 0 20px 0; text-align: center; }
+.content-wrapper { max-width: 800px; margin: 0 auto; text-align: center; color: #555; }
+
+/* Mosaïque */
+.mosaic { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+    gap: 30px; /* Espace propre entre les photos */
+    margin-bottom: 60px;
+}
+
+/* Cartes Projets & Hover Effect blanc/verre */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 5; /* Format légèrement vertical très esthétique */
+    cursor: pointer;
+}
+.project-card img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.project-info {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Voile blanc chic */
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    opacity: 0; transition: opacity 0.4s ease; padding: 20px; text-align: center;
+}
+.project-card:hover img { transform: scale(1.05); }
+.project-card:hover .project-info { opacity: 1; }
+
+.project-info h3 { margin-bottom: 15px; font-size: 1.8rem; color: #111; }
+.project-info p { font-size: 0.9rem; margin-bottom: 20px; color: #444; }
+.project-info a { 
+    display: inline-block; padding: 10px 20px; 
+    border: 1px solid #111; color: #111; text-decoration: none; 
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s;
+}
+.project-info a:hover { background: #111; color: #fff; }
+
+/* Réseaux Sociaux */
+.social-links { display: flex; justify-content: center; gap: 40px; font-size: 2.5rem; margin-top: 30px; }
+.social-links a { color: #111; transition: opacity 0.3s, transform 0.3s; }
+.social-links a:hover { opacity: 0.6; transform: translateY(-5px); }
+
+/* Responsive (Téléphones) */
+@media (max-width: 768px) {
+    #site-title { font-size: 2rem; }
+    .header-sub { flex-direction: column; gap: 10px; text-align: center; }
+    .italic-serif { display: none; /* Cache "Design" et "Studio" sur mobile */ }
+}
